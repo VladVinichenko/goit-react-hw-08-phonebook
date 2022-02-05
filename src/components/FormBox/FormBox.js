@@ -4,8 +4,7 @@ const FormBox = ({ children, buttonName, action, name, title }) => {
 
   const onSubmit = evt => {
     evt.preventDefault()
-    console.log(evt);
-    action = evt
+    action(evt)
   }
 
 

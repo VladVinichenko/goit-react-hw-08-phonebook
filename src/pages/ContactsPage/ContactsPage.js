@@ -16,6 +16,7 @@ export function ContactsPage() {
 
   const toggleModalWindow = () => {
     setShowModal(!showModal)
+    showModal && document.body.removeAttribute('style')
   };
 
   return (

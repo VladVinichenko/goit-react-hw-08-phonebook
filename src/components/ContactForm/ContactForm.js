@@ -22,7 +22,6 @@ const ContactForm = ({ action }) => {
   }, [dispatch]);
 
   const onAddContact = (evt) => {
-    evt.preventDefault()
     dispatch(addContactsAction(
       {
         name: name, phone: number,

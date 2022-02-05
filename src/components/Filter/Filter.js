@@ -6,7 +6,7 @@ import Button from '../Button/Button';
 import s from './Filter.module.css'
 
 
-const Filter = () => {
+const Filter = ({ action }) => {
   const dispatch = useDispatch()
   const [filter, setFilter] = useState('')
 
@@ -24,7 +24,7 @@ const Filter = () => {
         </div>
 
 
-        <Button>Add contact</Button>
+        <Button action={action}>Add contact</Button>
       </div>
 
 

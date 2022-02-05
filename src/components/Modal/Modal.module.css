@@ -4,16 +4,19 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.226);
   z-index: 1200;
+  backdrop-filter: blur(10px);
 }
 
 .Modal {
   max-width: calc(100vw - 48px);
   max-height: calc(100vh - 24px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
 }
 
 .Button {
@@ -26,6 +29,9 @@
   color: rgb(255, 255, 255);
   font-size: 12px;
   transition: all 250ms;
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 
 .Button:hover {

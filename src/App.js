@@ -24,12 +24,12 @@ export const App = () => {
           <h1 className={s.logo}><span className={s.preLogo}>the</span>Contacts</h1>
         </NavLink>
         <ul className={s.navList}>
-          <li className={s.navItem}>
+          {/* <li className={s.navItem}>
             <NavLink to={ROUTERS.REGISTER} exact activeClassName={s.selected} className={s.link}>Register</NavLink>
           </li>
           <li className={s.navItem}>
             <NavLink to={ROUTERS.LOGIN} exact activeClassName={s.selected} className={s.link}>Login</NavLink>
-          </li>
+          </li> */}
           <li className={s.navItem}>
             <NavLink to={ROUTERS.CONTACTS} exact activeClassName={s.selected} className={s.link}>Contacts</NavLink>
           </li>
@@ -38,10 +38,10 @@ export const App = () => {
 
       <Switch>
         <Route path={ROUTERS.ERROR_404} component={Error404} />
-        <Route path={ROUTERS.REGISTER} component={RegisterPage} />
-        <Route path={ROUTERS.LOGIN} component={LoginPage} />
+        {/* <Route path={ROUTERS.REGISTER} component={RegisterPage} />
+        <Route path={ROUTERS.LOGIN} component={LoginPage} /> */}
         <Route path={ROUTERS.CONTACTS} component={ContactsPage} />
-        <Route path={ROUTERS.HOME} component={HomePage} exact />
+        <Route path={ROUTERS.HOME} component={HomePage} />
         <Redirect to={ROUTERS.ERROR_404} />
       </Switch>
       {/* <ToastContainer autoClose={4000} /> */}

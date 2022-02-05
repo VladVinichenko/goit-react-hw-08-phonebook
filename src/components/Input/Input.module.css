@@ -27,6 +27,10 @@
   color: rgb(255, 255, 255);
 }
 
+.input:valid {
+  background-color: rgb(91, 255, 58);
+}
+
 .box {
   display: flex;
   align-items: center;

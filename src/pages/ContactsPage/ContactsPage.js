@@ -1,7 +1,8 @@
-import { Fragment } from 'react'
+import { Fragment, useState } from 'react'
 import ContactForm from '../../components/ContactForm/ContactForm'
 import ContactList from '../../components/ContactList/ContactList'
 import Filter from '../../components/Filter/Filter'
+import Modal from '../../components/Modal/Modal'
 import Section from '../../components/Section/Section'
 import s from './ContactsPage.module.css'
 
@@ -11,15 +12,22 @@ import s from './ContactsPage.module.css'
 
 
 export function ContactsPage() {
+  const [showModal, setShowModal] = useState(false)
 
+  const toggleModalWindow = () => {
+    setShowModal(!showModal)
+  };
 
   return (
     <Fragment>
-      <Section title={'Phonebook'}>
+      {showModal && (<Modal onCloseModal={toggleModalWindow}>
+        <ContactForm action={toggleModalWindow} />
+      </Modal>)}
+      {/* <Section title={'Phonebook'}>
         <ContactForm />
-      </Section>
+      </Section> */}
       <Section title={'Contacts'}>
-        <Filter />
+        <Filter action={toggleModalWindow} />
         <ContactList />
       </Section>
     </Fragment>

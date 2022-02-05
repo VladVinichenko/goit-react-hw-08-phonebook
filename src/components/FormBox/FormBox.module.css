@@ -1,6 +1,6 @@
 .formBox {
   border-radius: var(--card-radius);
-  padding: 30px 50px;
+  padding: 50px 30px 20px 30px;
   background-color: var(--background-color);
   color: var(--font-seconary-color);
   box-shadow: var(--card-shadow);
@@ -9,6 +9,13 @@
   align-items: center;
   max-width: 500px;
   margin: 0 auto;
+  width: 500px;
+}
+
+@media screen and (max-width: 680px) {
+  .formBox {
+    width: 65vw;
+  }
 }
 
 .formBox:not(:last-child) {
@@ -36,4 +43,14 @@
   box-shadow: var(--card-hover-shadow);
   background: var(--background-hover-style);
   color: rgb(0, 0, 0);
+}
+
+.title {
+  color: rgb(255, 255, 175);
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  position: absolute;
+  top: 8px;
+  left: 15px;
 }

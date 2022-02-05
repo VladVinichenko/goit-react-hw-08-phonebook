@@ -6,7 +6,7 @@ import { addContactsAction, getContactsAction } from '../../store/action';
 import { useDispatch } from 'react-redux';
 import FormBox from '../FormBox/FormBox';
 
-const ContactForm = () => {
+const ContactForm = ({ action }) => {
   const [name, setName] = useState('')
   const [number, setNumber] = useState('')
   const dispatch = useDispatch()
@@ -28,10 +28,11 @@ const ContactForm = () => {
         name: name, phone: number,
       }
     ))
+    action()
   }
 
   return (
-    <FormBox action={onAddContact} buttonName={'Add contact'} name={'add_contact'}>
+    <FormBox action={onAddContact} buttonName={'Add contact'} name={'add_contact'} title={'Add Contact'}>
       <Input name="name" value={name} placeholder={'Input new name'} inputData={onInput}>Name</Input>
       <Input name="number" value={number} placeholder={'Input new number'} tel='true' inputData={onInput}>Number</Input>
     </FormBox>

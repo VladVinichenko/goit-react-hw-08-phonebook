@@ -1,10 +1,10 @@
-import s from './ContactForm.module.css'
 import Input from '../Input/Input';
 import Button from '../Button/Button'
 import React, { useState, useEffect } from "react";
 import { addContactsAction, getContactsAction } from '../../store/action';
 
 import { useDispatch } from 'react-redux';
+import FormBox from '../FormBox/FormBox';
 
 const ContactForm = () => {
   const [name, setName] = useState('')
@@ -31,11 +31,10 @@ const ContactForm = () => {
   }
 
   return (
-    <form className={s.boxForm} >
-      <Input name="name" inputData={onInput}>Name</Input>
-      <Input name="number" tel='true' inputData={onInput}>Number</Input>
-      <Button name='addContact' action={onAddContact}>Add contact</Button>
-    </form >
+    <FormBox action={onAddContact} buttonName={'Add contact'} name={'add_contact'}>
+      <Input name="name" value={name} placeholder={'Input new name'} inputData={onInput}>Name</Input>
+      <Input name="number" value={number} placeholder={'Input new number'} tel='true' inputData={onInput}>Number</Input>
+    </FormBox>
   )
 }
 

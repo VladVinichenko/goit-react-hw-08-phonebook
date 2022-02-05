@@ -14,6 +14,7 @@
   background-color: rgb(177, 177, 177);
   color: rgb(29, 29, 29);
   transition: all 250ms;
+  box-sizing: border-box;
 }
 
 .input:hover,
@@ -22,6 +23,17 @@
   color: black;
 }
 
-.input:not(:last-child) {
+.input::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.box:not(:last-child) {
   margin-bottom: 20px;
 }

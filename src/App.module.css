@@ -1,5 +1,90 @@
-.title {
-  color: var(--font-primary-color);
-  font-size: 20px;
-  margin-bottom: 10px;
+.header {
+  background-color: var(--background-color);
+  display: flex;
+  align-items: bottom;
+  box-shadow: 0 0 10px rgb(17, 17, 17);
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  justify-content: left;
+  height: 80px;
+  padding-left: 280px;
+}
+
+.preLogo {
+  color: rgb(95, 95, 95);
+  font-size: 35px;
+  transition: all 250ms;
+}
+.logo {
+  font-size: 60px;
+  color: rgb(255, 187, 0);
+  margin-right: 40px;
+  text-shadow: 0 0 5px rgb(0, 0, 0);
+  background: linear-gradient(to right, rgb(99, 0, 124), transparent);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80px;
+  z-index: -1;
+  transition: all 250ms;
+}
+
+.logo:hover {
+  color: rgb(251, 255, 0);
+  background: linear-gradient(to right, rgb(114, 0, 143), transparent);
+}
+
+.logo:hover .preLogo {
+  color: rgb(160, 160, 160);
+}
+
+.navList {
+  display: flex;
+  padding: 20px 20px;
+  height: min-content;
+  flex-wrap: wrap;
+}
+
+.link {
+  border: none;
+  border-radius: var(--card-radius);
+  padding: 8px 30px;
+  outline: none;
+  background-color: var(--background-color);
+  color: rgb(151, 151, 151);
+  font-size: 22px;
+  box-shadow: var(--card-shadow);
+  transition: all 250ms;
+}
+
+.link:hover {
+  color: white;
+  box-shadow: var(--card-hover-shadow);
+  background: var(--background-hover-style);
+}
+
+.navItem {
+  height: min-content;
+}
+
+.navItem:not(:last-child) {
+  margin-right: 23px;
+}
+
+.selected {
+  color: yellow;
+  background-color: rgb(83, 24, 64);
+  box-shadow: var(--card-hover-shadow);
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    height: 136px;
+    padding-left: 230px;
+  }
+
+  .link:first-child {
+    margin-bottom: 20px;
+  }
 }

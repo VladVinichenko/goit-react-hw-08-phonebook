@@ -1,26 +1,29 @@
 import s from './Input.module.css'
-import { Fragment } from 'react/cjs/react.production.min';
 import propTypes from 'prop-types';
 
-const Input = ({ name, children, inputData, tel }) => {
+const Input = ({ name, children, value, inputData, tel, placeholder, type }) => {
   return (
-    <Fragment>
+    <div className={s.box}>
       <p className={s.name}>{children}</p>
 
       {!tel ? <input className={s.input}
         onChange={inputData}
+        value={value}
         name={name}
-        type="text"
+        type={type ? type : 'text'}
+        placeholder={placeholder}
         required
       /> : <input className={s.input}
         onChange={inputData}
+        value={value}
         name={name}
         type="tel"
+        placeholder={placeholder}
         pattern="\+?\d{1, 4}?[-.\s]?\(?\d{1, 3}?\)?[-.\s]?\d{1, 4}[-.\s]?\d{1, 4}[-.\s]?\d{1, 9}"
         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
         required
       />}
-    </Fragment>
+    </div>
   )
 }
 

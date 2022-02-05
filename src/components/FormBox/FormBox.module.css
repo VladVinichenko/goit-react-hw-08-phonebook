@@ -1,0 +1,39 @@
+.formBox {
+  border-radius: var(--card-radius);
+  padding: 30px 50px;
+  background-color: var(--background-color);
+  color: var(--font-seconary-color);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.formBox:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.button {
+  border: none;
+  border-radius: var(--card-radius);
+  padding: 8px 20px;
+  outline: none;
+  background-color: var(--background-color);
+
+  color: rgb(255, 159, 239);
+  font-size: 22px;
+  box-shadow: var(--card-shadow);
+  transition: all 250ms;
+}
+
+.button:not(:last-child) {
+  margin-right: 20px;
+}
+
+.button:hover {
+  box-shadow: var(--card-hover-shadow);
+  background: var(--background-hover-style);
+  color: rgb(0, 0, 0);
+}

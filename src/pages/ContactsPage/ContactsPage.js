@@ -4,7 +4,6 @@ import ContactList from '../../components/ContactList/ContactList'
 import Filter from '../../components/Filter/Filter'
 import Modal from '../../components/Modal/Modal'
 import Section from '../../components/Section/Section'
-import s from './ContactsPage.module.css'
 
 
 

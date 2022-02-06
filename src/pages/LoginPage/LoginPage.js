@@ -1,13 +1,8 @@
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import Button from '../../components/Button/Button'
 import FormBox from '../../components/FormBox/FormBox'
 import Input from '../../components/Input/Input'
-import Modal from '../../components/Modal/Modal'
-import Section from '../../components/Section/Section'
-import s from './LoginPage.module.css'
 import { userLogin } from '../../api/user'
-import { toast } from 'react-toastify';
 
 export function LoginPage() {
   const [email, setEmail] = useState('')

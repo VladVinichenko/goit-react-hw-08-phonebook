@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import { contactReducer } from "./contacts";
 import { userReducer } from "./user";
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 
 const rootReducer = combineReducers({
   contactReducer, userReducer,

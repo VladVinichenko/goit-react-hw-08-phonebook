@@ -7,10 +7,10 @@ const modalRoot = document.querySelector('#modal-root');
 
 export default function Modal({ onCloseModal, type, children, action }) {
   const history = useHistory()
-  const error = useSelector(store => store.userReducer.error)
   const isLogged = useSelector(store => store.userReducer.isLogged)
   const handleUserKeyPress = useCallback(event => {
     event.code === 'Escape' && functionCloseModal()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   useEffect(() => {
     document.body.style.overflow = "hidden"
@@ -24,7 +24,6 @@ export default function Modal({ onCloseModal, type, children, action }) {
   }, [handleUserKeyPress]);
 
   const handleBackdropClick = e => {
-    console.dir(e);
     if (e.currentTarget === e.target) {
       functionCloseModal()
     }
@@ -33,7 +32,9 @@ export default function Modal({ onCloseModal, type, children, action }) {
 
   useEffect(() => {
     if (isLogged && type === 'sign') { functionCloseModal() }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLogged])
+
   const closeModal = (evt) => {
     functionCloseModal()
   }

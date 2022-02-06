@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import s from './App.module.css'
 import { BrowserRouter, NavLink, Redirect, Route, Switch } from "react-router-dom";
 import { RegisterPage } from "./pages/RegisterPage/RegisterPage";
@@ -7,9 +7,8 @@ import { ContactsPage } from "./pages/ContactsPage/ContactsPage";
 import { ROUTERS } from "./consts";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { Error404 } from "./pages/Error404/Error404";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import { testApi } from "./api/user";
 import UserMenu from "./components/UserMenu/UserMenu";
 import { useDispatch, useSelector } from "react-redux";
 import Modal from "./components/Modal/Modal";
@@ -24,6 +23,7 @@ export const App = () => {
   useEffect(() => {
     const token = localStorage.getItem('token')
     token && dispatch(userCurrent(token))
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

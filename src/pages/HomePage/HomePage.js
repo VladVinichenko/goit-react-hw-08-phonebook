@@ -1,11 +1,8 @@
-import { Fragment, useState } from 'react'
-import { NavLink, Route } from 'react-router-dom';
+import { Fragment } from 'react'
+import { NavLink } from 'react-router-dom';
 import Section from '../../components/Section/Section'
 import s from './HomePage.module.css'
 import { ROUTERS } from '../../consts';
-import { RegisterPage } from '../RegisterPage/RegisterPage';
-import { LoginPage } from '../LoginPage/LoginPage';
-import Modal from '../../components/Modal/Modal';
 import welcomeImg from '../../images/welcome.jpg'
 
 

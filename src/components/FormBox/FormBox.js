@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react'
-import { useSelector } from 'react-redux'
 import s from './FormBox.module.css'
 
 const FormBox = ({ children, buttonName, action, name, title }) => {

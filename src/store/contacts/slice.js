@@ -1,4 +1,4 @@
-import { createSlice, isFulfilled } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import { addContacts, getContacts, deleteContacts, editContacts } from '../../api/contacts'
 import { toast } from 'react-toastify';
 
@@ -87,6 +87,7 @@ const contactSlice = createSlice({
           el.name = action.payload.name
           el.number = action.payload.number
         }
+
       });
       state.loading = false
       toast.success('Complete')

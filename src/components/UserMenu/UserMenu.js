@@ -1,9 +1,9 @@
-import { Fragment, useEffect, useState } from 'react'
+import { Fragment } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import s from './UserMenu.module.css'
 import Button from '../Button/Button'
 import { userLogout } from '../../api/user'
-import { NavLink, Route } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { ROUTERS } from '../../consts'
 
 export default function UserMenu() {

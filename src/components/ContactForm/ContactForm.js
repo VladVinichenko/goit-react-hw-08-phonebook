@@ -1,5 +1,4 @@
 import Input from '../Input/Input';
-import Button from '../Button/Button'
 import React, { useState, useEffect } from "react";
 import { addContacts, editContacts } from '../../api/contacts';
 
@@ -16,6 +15,7 @@ const ContactForm = ({ action, contactId }) => {
       setName(contactId.name)
       setNumber(contactId.number)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const onInput = (evt) => {

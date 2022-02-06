@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { userLogin, userLogout, userSignUp, userCurrent } from '../../api/user'
+import { toast } from 'react-toastify';
 
 const initialState = {
   userData: {
@@ -29,11 +30,13 @@ const userSlice = createSlice({
       state.userData.email = action.payload.user.email
       state.token = action.payload.token
       localStorage.setItem('token', action.payload.token)
+      toast.success('Success')
     })
     builder.addCase(userSignUp.rejected, (state, action) => {
       state.loading = false
       state.isLogged = false
       state.error = action.payload
+      toast.error('Incorrect name, email or password')
     })
     //-----------------END UserSignUp-----------------------------------
 
@@ -49,12 +52,14 @@ const userSlice = createSlice({
       state.userData.email = action.payload.user.email
       state.token = action.payload.token
       localStorage.setItem('token', action.payload.token)
+      toast.success('Success')
 
     })
     builder.addCase(userLogin.rejected, (state, action) => {
       state.loading = false
       state.isLogged = false
       state.error = action.payload
+      toast.error('Incorrect name or password')
     })
     //-----------------END UserLogin-----------------------------------
 
@@ -68,10 +73,12 @@ const userSlice = createSlice({
       state.loading = false
       state.token = ''
       localStorage.removeItem('token')
+      toast.success('complete')
     })
     builder.addCase(userLogout.rejected, (state, action) => {
       state.loading = false
       state.error = action.payload
+      toast.error('error')
     })
     //-----------------END userLogout-----------------------------------
 
@@ -86,16 +93,25 @@ const userSlice = createSlice({
       state.token = action.meta.arg
       state.userData.name = action.payload.name
       state.userData.email = action.payload.email
+      toast.success('autologin', {
+        autoClose: 600,
+        hideProgressBar: true,
+      })
     })
     builder.addCase(userCurrent.rejected, (state, action) => {
       state.loading = false
       state.isLogged = false
       state.error = action.payload
+      toast.error('error autologin', {
+        autoClose: 1000,
+        hideProgressBar: true,
+      })
       // localStorage.removeItem('token')
     })
     //-----------------END userCurrent-----------------------------------
 
   },
 })
+
 
 export const userReducer = userSlice.reducer

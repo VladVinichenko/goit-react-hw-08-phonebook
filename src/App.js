@@ -7,25 +7,20 @@ import { ContactsPage } from "./pages/ContactsPage/ContactsPage";
 import { ROUTERS } from "./consts";
 import { HomePage } from "./pages/HomePage/HomePage";
 import { Error404 } from "./pages/Error404/Error404";
-// import CustomScroll from "react-custom-scroll";
-// import { ToastContainer } from "react-toastify";
-// import SimpleBar from 'simplebar-react';
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import { testApi } from "./api/user";
 import UserMenu from "./components/UserMenu/UserMenu";
 import { useDispatch, useSelector } from "react-redux";
 import Modal from "./components/Modal/Modal";
 import { userCurrent } from "./api/user";
-// testApi()
 
-// 
+
+
 
 export const App = () => {
   const dispatch = useDispatch()
-
-
-
   const isLogged = useSelector(store => store.userReducer.isLogged)
-
   useEffect(() => {
     const token = localStorage.getItem('token')
     token && dispatch(userCurrent(token))
@@ -67,7 +62,7 @@ export const App = () => {
 
       </Switch>
 
-      {/* <ToastContainer autoClose={4000} /> */}
+      <ToastContainer autoClose={2000} />
 
     </BrowserRouter >
   )

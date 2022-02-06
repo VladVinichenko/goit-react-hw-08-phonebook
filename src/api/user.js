@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from "axios";
-
+import { toast } from 'react-toastify';
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com/';
 
 
@@ -14,33 +14,6 @@ export const token = {
     axios.defaults.headers.common['Authorization'] = ``;
   },
 };
-
-export const testApi = async () => {
-  // userLogin()
-  // userCurrent()
-  // userLogout()
-  // userCurrent()
-};
-
-
-// export const userSignUp = async payload => {
-//   axios.post('/users/signup', JSON.stringify(payload))
-//     .then(function (response) {
-//       // обработка успешного запроса
-
-//       if (response.ok) {
-
-//         const data = response.data.json();
-//         token.set(data.token);
-//         return data;
-//       }
-//       return {};
-//     })
-//     .catch(function (error) {
-//       // обработка ошибки
-//       return error
-//     })
-// };
 
 
 
@@ -81,8 +54,7 @@ export const userLogin = createAsyncThunk('user/login', async (payload, thunkAPI
     .catch(function (error) {
       return thunkAPI.rejectWithValue(error.response.statusText)
     });
-}
-)
+})
 
 
 

@@ -8,6 +8,7 @@ const modalRoot = document.querySelector('#modal-root');
 export default function Modal({ onCloseModal, type, children, action }) {
   const history = useHistory()
   const error = useSelector(store => store.userReducer.error)
+  const isLogged = useSelector(store => store.userReducer.isLogged)
   const handleUserKeyPress = useCallback(event => {
     event.code === 'Escape' && functionCloseModal()
   }, []);
@@ -28,12 +29,10 @@ export default function Modal({ onCloseModal, type, children, action }) {
     }
   };
 
-  const onSubmit = (evt) => {
-    console.log(evt);
-    console.log(error);
-    // functionCloseModal()
-  }
-  console.log(error);
+
+  useEffect(() => {
+    if (isLogged && type === 'sign') { functionCloseModal() }
+  }, [isLogged])
   const closeModal = (evt) => {
     functionCloseModal()
   }
@@ -46,7 +45,7 @@ export default function Modal({ onCloseModal, type, children, action }) {
 
   return createPortal(
     <div className={s.Overlay} onClick={handleBackdropClick}>
-      <div className={s.Modal} onSubmit={onSubmit}>
+      <div className={s.Modal} >
         <button
           type="button"
           className={s.Button}

@@ -7,6 +7,7 @@ import Modal from '../../components/Modal/Modal'
 import Section from '../../components/Section/Section'
 import s from './LoginPage.module.css'
 import { userLogin } from '../../api/user'
+import { toast } from 'react-toastify';
 
 export function LoginPage() {
   const [email, setEmail] = useState('')

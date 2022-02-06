@@ -1,5 +1,6 @@
 import { createSlice, isFulfilled } from '@reduxjs/toolkit'
 import { addContacts, getContacts, deleteContacts, editContacts } from '../../api/contacts'
+import { toast } from 'react-toastify';
 
 const initialState = {
   contacts: [],
@@ -35,10 +36,12 @@ const contactSlice = createSlice({
       state.contacts = [...state.contacts, action.payload]
       console.log(action.payload);
       state.loading = false
+      toast.success('Added')
     })
     builder.addCase(addContacts.rejected, (state, action) => {
       state.loading = false
       state.error = action.payload
+      toast.error('Error')
     })
     //-----------------END addContacts-----------------------------------
 
@@ -53,6 +56,7 @@ const contactSlice = createSlice({
     builder.addCase(getContacts.rejected, (state, action) => {
       state.loadingUsers = false;
       state.error = action.payload;
+      toast.error('Error get conact list from server')
     });
     //-----------------END getContacts-----------------------------------
 
@@ -64,10 +68,12 @@ const contactSlice = createSlice({
       state.contacts = state.contacts.filter(el => el.id !== action.meta.arg)
       state.filter = state.filter.length > 0 && state.filter.filter(el => el.id !== action.meta.arg)
       state.loadingUsers = false;
+      toast.success('Deleted')
     });
     builder.addCase(deleteContacts.rejected, (state, action) => {
       state.loadingUsers = false;
       state.error = action.payload;
+      toast.error('Error delete')
     });
     //-----------------END deleteContacts-----------------------------------
 
@@ -84,10 +90,12 @@ const contactSlice = createSlice({
         }
       });
       state.loading = false
+      toast.success('Complete')
     })
     builder.addCase(editContacts.rejected, (state, action) => {
       state.loading = false
       state.error = action.payload
+      toast.error('Error edit')
     })
     //-----------------END editContacts-----------------------------------
   },

@@ -22,12 +22,8 @@ const Filter = ({ action }) => {
         <div className={s.inputBox}>
           <Input className={s.input} name="filter" value={filter} inputData={onInputFilter} placeholder={'Search'}>Find contacts by name</Input>
         </div>
-
-
         <Button action={action}>Add contact</Button>
       </div>
-
-
     </div>
   )
 }

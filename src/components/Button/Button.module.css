@@ -21,5 +21,15 @@
 .button:hover {
   box-shadow: var(--card-hover-shadow);
   background: var(--background-hover-style);
-  color: rgb(0, 0, 0);
+  /* color: rgb(0, 0, 0); */
+}
+
+.buttonRed {
+  composes: button;
+  background-color: rgb(139, 9, 9);
+}
+
+.buttonRed:hover {
+  background: rgb(255, 48, 48);
+  /* color: rgb(0, 0, 0); */
 }

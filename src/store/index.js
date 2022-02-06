@@ -1,9 +1,10 @@
 import { combineReducers } from "redux";
 import { contactReducer } from "./contacts";
+import { userReducer } from "./user";
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
 
 const rootReducer = combineReducers({
-  contactReducer,
+  contactReducer, userReducer,
 });
 
 export const store = configureStore({

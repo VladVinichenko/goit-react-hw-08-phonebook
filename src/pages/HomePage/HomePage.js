@@ -6,42 +6,27 @@ import { ROUTERS } from '../../consts';
 import { RegisterPage } from '../RegisterPage/RegisterPage';
 import { LoginPage } from '../LoginPage/LoginPage';
 import Modal from '../../components/Modal/Modal';
-
+import welcomeImg from '../../images/welcome.jpg'
 
 
 
 
 export function HomePage() {
 
-  const [showModal, setShowModal] = useState(true)
-
-  const toggleModalWindow = () => {
-    setShowModal(!showModal)
-  };
-
-  const onAction = () => {
-    console.log('');
-  }
-
   return (
     <Fragment>
-      <Section>
-        <li className={s.navItem}>
-          <NavLink to={ROUTERS.REGISTER} exact activeClassName={s.selected} className={s.link}>Register</NavLink>
-        </li>
-        <li className={s.navItem}>
-          <NavLink to={ROUTERS.LOGIN} exact activeClassName={s.selected} className={s.link}>Login</NavLink>
-        </li>
-
-        <Route path={ROUTERS.REGISTER} render={props => <Modal {...props} type={'sign'}>
-          <RegisterPage action={toggleModalWindow} />
-        </Modal>} />
-
-        <Route path={ROUTERS.LOGIN} render={props => <Modal {...props} type={'sign'}>
-          <LoginPage action={toggleModalWindow} />
-        </Modal>} />
-
-
+      <Section title='Welcome !'>
+        {/* <div className={s.pictureBox}> */}
+        <img className={s.picture} alt='welcome' srcSet={welcomeImg} />
+        {/* </div> */}
+        <ul className={s.navList}>
+          <li className={s.navItem}>
+            <NavLink to={ROUTERS.LOGIN} exact activeClassName={s.selected} className={s.link}>Login</NavLink>
+          </li>
+          <li className={s.navItem}>
+            <NavLink to={ROUTERS.REGISTER} exact activeClassName={s.selected} className={s.link}>SignUp</NavLink>
+          </li>
+        </ul>
       </Section>
     </Fragment>
   )

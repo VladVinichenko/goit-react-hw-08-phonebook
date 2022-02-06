@@ -1,0 +1,43 @@
+.box {
+  display: flex;
+  margin-left: auto;
+  padding: 20px;
+}
+
+.email {
+  font-size: 20px;
+  margin-right: 15px;
+  color: var(--font-primary-color);
+}
+
+.navList {
+  display: flex;
+  height: min-content;
+  flex-wrap: wrap;
+}
+
+.navItem {
+  height: min-content;
+}
+
+.navItem:not(:last-child) {
+  margin-right: 23px;
+}
+
+.link {
+  border: none;
+  border-radius: var(--card-radius);
+  padding: 8px 30px;
+  outline: none;
+  background-color: var(--background-color);
+  color: rgb(151, 151, 151);
+  font-size: 18px;
+  box-shadow: var(--card-shadow);
+  transition: all 250ms;
+}
+
+.link:hover {
+  color: white;
+  box-shadow: var(--card-hover-shadow);
+  background: var(--background-hover-style);
+}

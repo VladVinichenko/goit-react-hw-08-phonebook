@@ -7,6 +7,8 @@
   display: flex;
   align-items: center;
   font-size: 18px;
+
+  justify-content: space-between;
 }
 
 .item:not(:last-child) {
@@ -31,4 +33,11 @@
   font-size: 40px;
   color: red;
   text-align: center;
+}
+
+.textBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }

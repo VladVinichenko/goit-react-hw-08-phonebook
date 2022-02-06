@@ -1,0 +1,47 @@
+.navList {
+  display: flex;
+  justify-content: center;
+  padding: 20px 20px;
+  height: min-content;
+}
+
+.link {
+  border: none;
+  border-radius: var(--card-radius);
+  padding: 8px 30px;
+  outline: none;
+  background-color: var(--background-color);
+  color: rgb(151, 151, 151);
+  font-size: 22px;
+  box-shadow: var(--card-shadow);
+  transition: all 250ms;
+}
+
+.link:hover {
+  color: white;
+  box-shadow: var(--card-hover-shadow);
+  background: var(--background-hover-style);
+}
+
+.navItem {
+  height: min-content;
+}
+
+.navItem:not(:last-child) {
+  margin-right: 23px;
+}
+
+.pictureBox {
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+}
+
+.picture {
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+  margin: 0 auto;
+  max-height: calc(100vh - 280px);
+  object-fit: contain;
+}

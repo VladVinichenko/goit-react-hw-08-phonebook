@@ -5,10 +5,14 @@
   box-shadow: 0 0 10px rgb(17, 17, 17);
   position: sticky;
   top: 0;
+  /* left: 0; */
   z-index: 30;
-  justify-content: left;
-  height: 80px;
-  padding-left: 280px;
+  justify-content: space-between;
+  /* height: 80px; */
+  height: fit-content;
+  /* padding-left: 280px; */
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .preLogo {
@@ -19,12 +23,12 @@
 .logo {
   font-size: 60px;
   color: rgb(255, 187, 0);
-  margin-right: 40px;
+  /* margin-right: 40px; */
   text-shadow: 0 0 5px rgb(0, 0, 0);
   background: linear-gradient(to right, rgb(99, 0, 124), transparent);
-  position: absolute;
-  top: 0;
-  left: 0;
+  /* position: absolute; */
+  /* top: 0; */
+  /* left: 0; */
   height: 80px;
   z-index: -1;
   transition: all 250ms;
@@ -68,23 +72,12 @@
   height: min-content;
 }
 
-.navItem:not(:last-child) {
+/* .navItem:not(:last-child) {
   margin-right: 23px;
-}
+} */
 
 .selected {
   color: yellow;
   background-color: rgb(83, 24, 64);
   box-shadow: var(--card-hover-shadow);
-}
-
-@media screen and (max-width: 600px) {
-  .header {
-    height: 136px;
-    padding-left: 230px;
-  }
-
-  .link:first-child {
-    margin-bottom: 20px;
-  }
 }

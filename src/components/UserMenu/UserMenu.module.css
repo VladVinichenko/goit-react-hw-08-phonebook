@@ -1,7 +1,10 @@
 .box {
   display: flex;
-  margin-left: auto;
+  /* margin-left: auto; */
   padding: 20px;
+  padding-left: 0;
+  width: max-content;
+  margin-left: auto;
 }
 
 .email {

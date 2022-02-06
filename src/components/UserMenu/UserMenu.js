@@ -16,8 +16,6 @@ export default function UserMenu() {
     dispatch(userLogout())
   }
 
-
-
   return (
     <div className={s.box}>
       {isLogged && <Fragment>
@@ -34,10 +32,7 @@ export default function UserMenu() {
           </li>
         </ul>
       </Fragment>
-
       }
-
-
     </div>
   )
 }

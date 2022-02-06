@@ -62,7 +62,7 @@ const contactSlice = createSlice({
     });
     builder.addCase(deleteContacts.fulfilled, (state, action) => {
       state.contacts = state.contacts.filter(el => el.id !== action.meta.arg)
-      state.filter = state.filter.length > 0 && state.filter.filter(el => el.id !== action.payload)
+      state.filter = state.filter.length > 0 && state.filter.filter(el => el.id !== action.meta.arg)
       state.loadingUsers = false;
     });
     builder.addCase(deleteContacts.rejected, (state, action) => {

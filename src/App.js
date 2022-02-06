@@ -15,17 +15,14 @@ import UserMenu from "./components/UserMenu/UserMenu";
 import { useDispatch, useSelector } from "react-redux";
 import Modal from "./components/Modal/Modal";
 import { userCurrent } from "./api/user";
-
 // testApi()
 
 // 
 
 export const App = () => {
-  const [showModal, setShowModal] = useState(true)
   const dispatch = useDispatch()
-  const toggleModalWindow = () => {
-    setShowModal(!showModal)
-  };
+
+
 
   const isLogged = useSelector(store => store.userReducer.isLogged)
 
@@ -40,7 +37,7 @@ export const App = () => {
         <NavLink to={ROUTERS.HOME}>
           <h1 className={s.logo}><span className={s.preLogo}>the</span>Contacts</h1>
         </NavLink>
-        <UserMenu />
+        {isLogged && <UserMenu />}
 
       </header >
 
@@ -56,11 +53,11 @@ export const App = () => {
         <Route exact path={ROUTERS.HOME} component={HomePage} />
 
         <Route path={ROUTERS.REGISTER} render={props => <Modal {...props} type={'sign'}>
-          <RegisterPage action={toggleModalWindow} />
+          <RegisterPage />
         </Modal>} />
 
         <Route path={ROUTERS.LOGIN} render={props => <Modal {...props} type={'sign'}>
-          <LoginPage action={toggleModalWindow} />
+          <LoginPage />
         </Modal>} />
 
 

@@ -82,13 +82,12 @@ const contactSlice = createSlice({
     })
     builder.addCase(editContacts.fulfilled, (state, action) => {
       state.contacts = [...state.contacts]
-      state.contacts.map(el => {
+      state.contacts = [...state.contacts.forEach(el => {
         if (el.id === action.payload.id) {
           el.name = action.payload.name
           el.number = action.payload.number
         }
-
-      });
+      })];
       state.loading = false
       toast.success('Complete')
     })

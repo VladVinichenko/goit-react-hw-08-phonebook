@@ -21,7 +21,7 @@ export function RegisterPage() {
   }
 
   const onSubmitRegister = evt => {
-    console.log({ name: name, email: email, password: password, });
+    // console.log({ name: name, email: email, password: password, });
     dispatch(userSignUp(
       {
         name: name, email: email, password: password,

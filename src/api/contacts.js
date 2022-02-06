@@ -40,7 +40,6 @@ export const deleteContacts = createAsyncThunk('/contacts/delete', async (payloa
   axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
   return await axios.delete(`/contacts/${payload}`)
     .then(function (response) {
-      console.log(response);
       if (response.status === 200) {
         return thunkAPI.fulfillWithValue(response.data)
       }
@@ -52,7 +51,6 @@ export const deleteContacts = createAsyncThunk('/contacts/delete', async (payloa
 )
 
 export const editContacts = createAsyncThunk('/contacts/edit', async (payload, thunkAPI) => {
-  console.log(payload);
   axios.defaults.headers.common['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
   return await axios.patch(`/contacts/${payload.id}`, payload.data)
     .then(function (response) {

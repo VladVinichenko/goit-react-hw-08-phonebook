@@ -7,7 +7,6 @@ import { useDispatch } from 'react-redux';
 import FormBox from '../FormBox/FormBox';
 
 const ContactForm = ({ action, contactId }) => {
-  console.log(contactId);
   const [name, setName] = useState('')
   const [number, setNumber] = useState('')
   const dispatch = useDispatch()
@@ -34,7 +33,6 @@ const ContactForm = ({ action, contactId }) => {
 
     ))
     action()
-    console.log('edit');
   }
 
   const onAddContact = (evt) => {

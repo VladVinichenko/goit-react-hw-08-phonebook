@@ -24,6 +24,7 @@ export default function Modal({ onCloseModal, type, children, action }) {
   }, [handleUserKeyPress]);
 
   const handleBackdropClick = e => {
+    console.dir(e);
     if (e.currentTarget === e.target) {
       functionCloseModal()
     }

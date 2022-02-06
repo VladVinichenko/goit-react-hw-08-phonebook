@@ -34,7 +34,6 @@ const contactSlice = createSlice({
     })
     builder.addCase(addContacts.fulfilled, (state, action) => {
       state.contacts = [...state.contacts, action.payload]
-      console.log(action.payload);
       state.loading = false
       toast.success('Added')
     })

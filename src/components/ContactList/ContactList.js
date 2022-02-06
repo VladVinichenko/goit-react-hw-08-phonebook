@@ -17,11 +17,9 @@ const ContactList = () => {
 
   const [showModal, setShowModal] = useState(false)
   const toggleModalWindow = () => {
-    console.log(selectUserData);
     setShowModal(!showModal)
     showModal && document.body.removeAttribute('style')
     showModal && setSelectUserData('')
-    console.log(selectUserData);
   };
 
   const onClickDelete = payload => {
@@ -29,13 +27,11 @@ const ContactList = () => {
   }
 
   const onClickItemChange = evt => {
-    if (evt.target.localName !== 'li') {
+    if (evt.target.dataset.name !== 'itemContact') {
       return
     }
-    console.dir(evt.target);
 
-
-    setSelectUserData(contacts.filter(el => el.id === evt.target.id)[0])
+    evt.target.id && setSelectUserData(contacts.filter(el => el.id === evt.target.dataset.id)[0])
     toggleModalWindow()
   }
 
@@ -47,11 +43,11 @@ const ContactList = () => {
   return (<Fragment>
     {itemList.length > 0 && !filter.error ? (<ul className={s.list}>
       {itemList.map((item) =>
-        <li key={item.id} id={item.id} className={s.item} onClick={onClickItemChange}>
-          <div className={s.textBox}>
+        <li key={item.id} id={item.id} className={s.item} onClick={onClickItemChange} data-id={item.id} data-name='itemContact'>
+          <div className={s.textBox} data-id={item.id} data-name='itemContact'>
 
 
-            <p className={s.name}>{item.name}</p><p className={s.number}>{item.number}</p>
+            <p className={s.name}>{item.name}</p><p className={s.number} data-id={item.id} data-name='itemContact'>{item.number}</p>
           </div>
           <DeleteButton onDeleteContact={onClickDelete} id={item.id} />
         </li>

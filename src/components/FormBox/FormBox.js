@@ -3,12 +3,9 @@ import { useSelector } from 'react-redux'
 import s from './FormBox.module.css'
 
 const FormBox = ({ children, buttonName, action, name, title }) => {
-  const isLogged = useSelector(store => store.userReducer.isLogged)
-
   const onSubmit = evt => {
     evt.preventDefault()
     action(evt)
-    console.log(isLogged);
   }
 
   return (

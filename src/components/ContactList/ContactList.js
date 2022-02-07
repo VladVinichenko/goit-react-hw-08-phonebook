@@ -13,6 +13,10 @@ const ContactList = () => {
   const contacts = useSelector(store => store.contactReducer.contacts)
   const filter = useSelector(store => store.contactReducer.filter)
 
+  console.log(selectUserData);
+
+  console.log(selectUserData);
+
   const itemList = filter.length > 0 ? filter : contacts
 
   const [showModal, setShowModal] = useState(false)
@@ -31,7 +35,7 @@ const ContactList = () => {
       return
     }
 
-    evt.target.id && setSelectUserData(contacts.filter(el => el.id === evt.target.dataset.id)[0])
+    setSelectUserData(contacts.filter(el => el.id === evt.target.dataset.id)[0])
     toggleModalWindow()
   }
 
@@ -43,11 +47,10 @@ const ContactList = () => {
   return (<Fragment>
     {itemList.length > 0 && !filter.error ? (<ul className={s.list}>
       {itemList.map((item) =>
-        <li key={item.id} id={item.id} className={s.item} onClick={onClickItemChange} data-id={item.id} data-name='itemContact'>
+        <li key={item.id} className={s.item} onClick={onClickItemChange} data-id={item.id} data-name='itemContact'>
           <div className={s.textBox} data-id={item.id} data-name='itemContact'>
-
-
-            <p className={s.name}>{item.name}</p><p className={s.number} data-id={item.id} data-name='itemContact'>{item.number}</p>
+            <p className={s.name} data-id={item.id} data-name='itemContact'>{item.name}</p>
+            <p className={s.number} data-id={item.id} data-name='itemContact'>{item.number}</p>
           </div>
           <DeleteButton onDeleteContact={onClickDelete} id={item.id} />
         </li>

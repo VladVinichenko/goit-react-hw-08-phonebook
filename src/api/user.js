@@ -19,7 +19,7 @@ export const token = {
 export const userSignUp = createAsyncThunk('user/signup', async (payload, thunkAPI) => {
   return await axios.post('/users/signup', payload)
     .then(function (response) {
-      if (response.status === 200) {
+      if (response.status === 201) {
         token.set(response.data.token);
         return thunkAPI.fulfillWithValue(response.data)
       }
